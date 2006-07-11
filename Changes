@@ -3,3 +3,6 @@ Revision history for VOIP-VOIPBuster
 0.01    2006-07-11T12:15
         First version, released on an unsuspecting world.
 
+0.02    2006-07-11T14:49
+        SYNOPSIS was slightly wrong on OO usage:
+

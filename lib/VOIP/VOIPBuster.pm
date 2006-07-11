@@ -15,18 +15,23 @@ use WWW::Mechanize;
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
 	use VOIP::VOIPBuster;
-	my ($me, $you) = qw(some international phone numbers);
+
+	my ($me, $you) = qw(two international phone numbers);
+
 	my $v = VOIP::VOIPBuster->new(from => $me, to => $you);
+	$v->call;
+
 	## OR ##
+
 	VOIP::VOIPBuster::call(
 		from	=> $me,
 		to		=> $you
@@ -39,7 +44,7 @@ our $VERSION = '0.01';
 =item new
 
 Creates a new VOIP::VOIPBuster object. Called automatically by call() if
-necessary.
+call() is called as a function rather than a method.
 
 =cut
 

@@ -1,0 +1,29 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+vbcall - makes a (limited) call using voipbuster.com's web interface
+
+=head1 SYNOPSIS
+
+	vbcall --from 0012345678901 --to 0013456789012
+
+=head1 DESCRIPTION
+
+C<vbcall> simply calls L<VOIP::VOIPBuster/call> using command-line parameters.
+
+=cut
+
+my ($from, $to);
+use Getopt::Long;
+use VOIP::VOIPBuster;
+
+GetOptions(
+	"from=s"	=> \$from,
+	"to=s"		=> \$to
+);
+exit VOIP::VOIPBuster::call(
+	from	=> $from,
+	to		=> $to
+);
+
